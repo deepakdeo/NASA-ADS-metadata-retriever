@@ -12,15 +12,16 @@ This project provides a Python script for retrieving metadata information of res
 ## Output
 The output CSV file will contain the following columns:
 
-bibcode - ADS unique identifier for the paper
-title - Paper title
-year - Publication year
-pub - Journal or publication
-abstract - Paper abstract
-keyword - Author keywords
-citation_count - Number of citations
-BibTeX - BibTeX entry for citing the paper
-ADS URL - Link to the paper details on ADS
+- **bibcode** - ADS unique identifier for the paper
+- **title** - Paper title
+- **year** - Publication year
+- **pub** - Journal or publication
+- **abstract** - Paper abstract
+- **keyword** - Author keywords
+- **citation_count** - Number of citations
+- **BibTeX** - BibTeX entry for citing the paper
+- **ADS URL** - Link to the paper details on ADS
+
 
 ## Prerequisites
 
