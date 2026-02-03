@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm[toml]>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nasa-ads-metadata-retriever"
+version = "2.0.0"
+description = "Query and export astronomy paper metadata from NASA ADS API"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Deepak Deo", email = "deepak@example.com"},
+]
+keywords = [
+    "astronomy",
+    "nasa-ads",
+    "papers",
+    "metadata",
+    "api",
+    "cli",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "requests>=2.25.0",
+    "pyyaml>=5.4.0",
+    "python-dotenv>=0.19.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=3.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+    "isort>=5.10.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/deepakdeo/NASA-ADS-metadata-retriever"
+Documentation = "https://github.com/deepakdeo/NASA-ADS-metadata-retriever#readme"
+Repository = "https://github.com/deepakdeo/NASA-ADS-metadata-retriever.git"
+"Bug Tracker" = "https://github.com/deepakdeo/NASA-ADS-metadata-retriever/issues"
+
+[project.scripts]
+nasa-ads-finder = "nasa_ads.cli:main"
+
+[tool.setuptools]
+packages = ["nasa_ads", "nasa_ads.core", "nasa_ads.config", "nasa_ads.utils", "nasa_ads.models", "nasa_ads.formatters"]
+
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310", "py311"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_mode = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+line_length = 88
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --tb=short"

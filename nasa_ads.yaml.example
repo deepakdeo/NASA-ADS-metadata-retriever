@@ -1,0 +1,26 @@
+# NASA ADS Metadata Retriever Configuration (YAML)
+# This file provides configuration in YAML format
+# Environment variables in .env file take precedence over values here
+
+# API Configuration
+api_key: null  # Set in .env file for security
+api_base_url: https://api.adsabs.harvard.edu/v1
+timeout: 30
+max_retries: 3
+retry_backoff_factor: 0.5
+
+# Search Configuration
+rows_per_request: 100
+sort_by: citation_count desc
+
+# Output Configuration
+output_format: csv  # csv, json, or bibtex
+output_directory: ./results
+
+# Logging Configuration
+log_level: INFO  # DEBUG, INFO, WARNING, ERROR
+log_file: nasa_ads.log
+
+# Rate Limiting
+rate_limit_delay_seconds: 0.1
+rate_limit_max_per_minute: 600
